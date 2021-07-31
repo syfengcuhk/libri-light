@@ -1,3 +1,15 @@
+This repo is based on the Libri-Light (see information below), and extended to implement experiments in the following two papers:
+@inproceedings{Feng2020,
+  author={Siyuan Feng and Odette Scharenborg},
+  title={{Unsupervised Subword Modeling Using Autoregressive Pretraining and Cross-Lingual Phone-Aware Modeling}},
+  year=2020,
+  booktitle={Proc. Interspeech 2020},
+  pages={2732--2736},
+  doi={10.21437/Interspeech.2020-1170},
+  url={http://dx.doi.org/10.21437/Interspeech.2020-1170}
+}
+
+
 # Libri-Light: A Benchmark for ASR with Limited or No Supervision
 
 This repository contains code and models associated with the Libri-Light dataset, which can be [downloaded and prepared here](./data_preparation/README.md). More information about dataset creation and baselines can be found in this [arXiv Paper](https://arxiv.org/abs/1912.07875). Contained here is code for data preparation, pretrained models, and evaluation resources:
