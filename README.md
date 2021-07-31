@@ -18,6 +18,7 @@ This repo is based on the Libri-Light (see information below), and extended to i
   publisher={IEEE}
 }
 
+Please refer to kaldi_related/ folder for unsupervised DNN-BNF training and ABX evaluation on Libri-light dataset.
 # Libri-Light: A Benchmark for ASR with Limited or No Supervision
 
 This repository contains code and models associated with the Libri-Light dataset, which can be [downloaded and prepared here](./data_preparation/README.md). More information about dataset creation and baselines can be found in this [arXiv Paper](https://arxiv.org/abs/1912.07875). Contained here is code for data preparation, pretrained models, and evaluation resources:
