@@ -1,5 +1,6 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 import torch
+import torch.nn.functional as F
 import math
 from .ABX_src import dtw
 import progressbar
@@ -10,6 +11,8 @@ def get_distance_function_from_name(name_str):
         return get_euclidian_distance_batch
     if name_str == 'cosine':
         return get_cosine_distance_batch
+    if name_str == 'kld':
+        return get_kld_distance_batch
     raise ValueError(f"Invalid distance mode")
 
 
@@ -38,6 +41,10 @@ def get_euclidian_distance_batch(a1, a2):
     diff = a1.view(N1, 1, S1, 1, D) - a2.view(1, N2, 1, S2, D)
     return torch.sqrt((diff**2).sum(dim=4))
 
+def get_kld_distance_batch(a1, a2):
+    N1, S1, D = a1.size()
+    N2, S2, D = a2.size()
+    return F.kl_div(a1.view(N1, 1, S1, 1, D), a2.view(1, N2, 1, S2, D))
 
 def get_distance_group_dtw(a1, a2, size1, size2,
                            ignore_diag=False, symmetric=False,
