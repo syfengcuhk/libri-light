@@ -9,6 +9,13 @@ This repo is based on the Libri-Light (see information below), and extended to i
   url={http://dx.doi.org/10.21437/Interspeech.2020-1170}
 }
 
+@article{feng2021effectiveness,
+  title={The effectiveness of unsupervised subword modeling with autoregressive and cross-lingual phone-aware networks},
+  author={Feng, Siyuan and Scharenborg, Odette},
+  journal={IEEE Open Journal of Signal Processing},
+  year={2021},
+  publisher={IEEE}
+}
 
 # Libri-Light: A Benchmark for ASR with Limited or No Supervision
 
