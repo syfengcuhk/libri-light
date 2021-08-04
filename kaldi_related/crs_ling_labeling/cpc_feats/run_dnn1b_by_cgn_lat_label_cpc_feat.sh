@@ -74,6 +74,7 @@ cpc_gpu_suffix=_2GPU
 cpc_nlayers=2
 echo "$0 $@"  # Print the command line for logging
 
+common_egs_dir= #exp/chain_cgn_lat_label/train_unlab_600_subset900utt/lat_gen_acwt10.0/cpc_feats/dnn1b_bi_epoch3/egs/
 . cmd.sh
 . ./path.sh
 . ./utils/parse_options.sh
@@ -112,7 +113,6 @@ data_root_dir=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/CPC
 train_data_dir=${data_root_dir}/$cpc_dump_train_name/data_kaldi
 printf "\n: Training data dir: $train_data_dir \n"
 lores_train_data_dir=data_plus_cgn_transcripts/acwt${lat_generator_acwt}/${train_set}${train_subset}
-common_egs_dir=exp/chain_cgn_lat_label/train_unlab_600_subset900utt/lat_gen_acwt10.0/cpc_feats/dnn1b_bi_epoch3/egs/
 
 for f in  $train_data_dir/feats.scp; do
   [ ! -f $f ] && echo "$0: expected file $f to exist" && exit 1
@@ -120,13 +120,13 @@ done
 
 if [ $stage -le 13 ] && [ $stop_stage -gt 13 ]; then
   echo "Manually create data/split${nj_split}/{1,2,...,${nj_split}}/"
-  mkdir -p $train_data_dir/temp
+  mkdir -p $train_data_dir/temp${nj_split}
   mkdir -p $train_data_dir/split${nj_split}
   ref=data_hires_conf_cgn/${train_set}${train_subset}
   for ((x=1; x<=${nj_split}; x++))
   do
-    cut -d ' ' -f1 $ref/split${nj_split}/$x/spk2utt > $train_data_dir/temp/spklist${x}
-    utils/subset_data_dir.sh --spk-list $train_data_dir/temp/spklist${x} $train_data_dir $train_data_dir/split${nj_split}/$x
+    cut -d ' ' -f1 $ref/split${nj_split}/$x/spk2utt > $train_data_dir/temp${nj_split}/spklist${x}
+    utils/subset_data_dir.sh --spk-list $train_data_dir/temp${nj_split}/spklist${x} $train_data_dir $train_data_dir/split${nj_split}/$x
   done
 fi
 
