@@ -6,7 +6,7 @@
 # The default Quality of Service is the 'short' QoS (maximum run time: 4 hours)
 #SBATCH --qos=short
 # The default run (wall-clock) time is 1 minute
-#SBATCH --time=01:30:00
+#SBATCH --time=01:00:00
 # The default number of parallel tasks per job is 1
 #SBATCH --ntasks=1
 # Request 1 CPU per active thread of your program (assume 1 unless you specifically set this)
@@ -25,7 +25,7 @@
 eval_set=dev-clean
 eval_set=dev-other
 eval_set=test-clean
-#eval_set=test-other
+eval_set=test-other
 #srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 21 --stop-stage 22 --train-set train_unlab_600 --train-subset "_subset900utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 3 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
 #srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset900utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 4 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
 #srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset3600utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 3 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
@@ -34,5 +34,9 @@ eval_set=test-clean
 #srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset900utt" --cpc-notation-train-set "" --cpc-notation-config --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 5 --train-stage -10 --train-exit-stage 1000 --abx_eval-set-appoint test-other
 #srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset3600utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 4 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
 #srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset7200utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 3 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
-srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset7200utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 4 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
+#srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset7200utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 4 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
+#srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset14400utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 3 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
+#srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "_subset14400utt" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 4 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
+#srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 4 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
+srun bash crs_ling_labeling/cpc_feats/run_dnn1b_by_cgn_lat_label_cpc_feat.sh --nj 1 --stage 23 --stop-stage 24 --train-set train_unlab_600 --train-subset "" --cpc-notation-train-set "" --cpc-notation-config "" --lat-generator-acwt 10.0 --num-jobs-initial 1 --num-jobs-final 1 --num-epochs 3 --train-stage 0 --train-exit-stage 1000 --abx_eval-set-appoint $eval_set
 

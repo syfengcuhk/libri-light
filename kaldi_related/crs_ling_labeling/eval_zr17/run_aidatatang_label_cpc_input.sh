@@ -1,6 +1,6 @@
 #!/bin/bash
 which_cpc_layer=-1
-cgn_root_dir=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/kaldi/egs/cgn/s5/
+aidatatang_root_dir=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/kaldi/egs/aidatatang_200zh/s5/
 model_name=final
 stage=0
 stop_stage=1
@@ -24,14 +24,14 @@ cpc_gpu_suffix=_2GPU
 . ./path.sh
 . ./utils/parse_options.sh
 
-dir=exp/chain${nnet3_affix}_cgn_lat_label/${train_set}${train_subset}/lat_gen_acwt${lat_generator_acwt}/cpc_feats/dnn${tdnn_affix}_bi_epoch${num_epochs}${input_feat_affix}
+dir=exp/chain${nnet3_affix}_aidatatang_lat_label/${train_set}${train_subset}/lat_gen_acwt${lat_generator_acwt}/cpc_feats/dnn${tdnn_affix}_bi_epoch${num_epochs}${input_feat_affix}
 data_root_dir=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/CPC_audio/egs/libri-light/exp/tune_LSTMlayers/${train_set}${train_subset}${cpc_layers}_${cpc_max_size_loaded}_lr${cpc_lr}${cpc_gpu_suffix}/cpc_feats/zr17
 
 ## Ivector is not required
 #if [ $stage -le 0 ] && [ $stop_stage -gt 0 ]; then
 #  echo "extract ivectors for ZRSC test set"
-#  ivector_extractor=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/kaldi/egs/cgn/s5/exp/nnet3/extractor
-#  data_root_path=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/kaldi/egs/relocated_from_DSP/zerospeech2017/kaldi_stuff/data_hires_conf_cgn/
+#  ivector_extractor=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/kaldi/egs/aidatatang_200zh/s5/exp/nnet3/extractor
+#  data_root_path=/tudelft.net/staff-bulk/ewi/insy/SpeechLab/siyuanfeng/software/kaldi/egs/relocated_from_DSP/zerospeech2017/kaldi_stuff/data_hires_conf_aidatatang/
 #  for lang in english french mandarin; do
 #    for dur in 1s 10s 120s; do
 #    input_data=$data_root_path/test/$lang/$dur
